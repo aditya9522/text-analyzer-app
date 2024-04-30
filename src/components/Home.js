@@ -94,10 +94,7 @@ export default function LoginForm(props) {
   
   const CopyText = () => {
     if (text) {
-      let text = document.getElementById('myBox');
-      text.select()
-      navigator.clipboard.writeText(text.value);
-      window.getSelection().removeAllRanges()                      // to remove Selected Area or text
+      navigator.clipboard.writeText(text);
       props.displayAlert('The text copied successfully.', 'success')
     } else {
       props.displayAlert('Please write something to perform this operation.', 'warning')
